@@ -28,6 +28,14 @@
 1. 建立腳本檔案 PowerShellDemo.ps1
 2. 貼上以下內容
     ```powershell
+    # 建立服務結構，視服務建立流程自行修改
+    # groupName：資源群組名稱
+    # location：OpenAI 地區
+    # modelDeployment：OpenAI 部署名稱
+    # modelName：OpenAI 使用的模型名稱
+    # modelVersion：OpenAI 使用的模型版本
+    # 一個資源群組可能建立多個 OpenAI 服務，因此 source 使用陣列
+    # 一個 OpenAI 服務中可能建立多個模型，因此 source 中使用陣列存放欲建立的模型
     $jsonData = @'
     [{
         "groupName": "gpt-S1",
@@ -113,7 +121,5 @@
         }
         
     }
-
-
 
     ```
